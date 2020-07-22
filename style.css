@@ -1,0 +1,286 @@
+/*
+Theme Name: Igmdm Theme
+Author: Juni
+version: 1
+*/
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+header {
+    background: #fd7e14;
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    background: no-repeat; 
+    width: 80px; 
+    height: 80px; 
+    display: block; 
+    text-indent: -9999px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700");
+
+:root {
+    --color: #3c3163;
+    --transition-time: 0.5s;
+}
+
+.cards-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 35px;
+    padding: 10px;
+    margin: 0;
+    width: max-content;
+}
+
+.card {
+    --bg-filter-opacity: 0.5;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, var(--bg-filter-opacity)),
+        rgba(0, 0, 0, var(--bg-filter-opacity))
+        ),
+        var(--bg-img);
+    height: 13em;
+    width: 12em;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    /*margin: 2em;*/
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5em -1em black;
+    transition: all, var(--transition-time);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: rotate(0);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.card p {
+    font-size: 0.75em;
+    margin-top: 0.5em;
+    line-height: 1.5em;
+}
+
+.card .tags {
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+}
+
+.card .tags .tag {
+    font-size: 12px;
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, var(--transition-time);
+    color: white;
+}
+
+.card:hover .tags .tag {
+    color: #fd7e14;
+}
+
+.card:before,
+.card:after {
+    content: "";
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, var(--transition-time);
+    transition-timing-function: ease-in-out;
+}
+
+.card:before {
+    background: #ddd;
+    width: 250%;
+    height: 250%;
+}
+
+.card:after {
+    background: linear-gradient(129deg, rgba(253,126,20,1) 40%, rgba(255,193,7,1) 60%);
+    width: 200%;
+    height: 200%;
+}
+
+.card:hover {
+    color: var(--color);
+}
+
+.card:hover:before,
+.card:hover:after {
+    transform: scale(1);
+}
+
+.card-content {
+    margin-right: auto;
+}
+
+@media (max-width: 576px) {  
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        height: 11em;
+        width: 100%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width:768px) {  
+    .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        height: 11em;
+        width: 20em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) and (max-width:992px) {  
+    .cards-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* .card {
+        height: 11em;
+        width: 20em;
+    } */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1200px) { 
+    .cards-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    .cards-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.nav {
+    justify-content: center;
+}
+
+#menu-top-menu a {
+    text-decoration: none;
+}
+  
+.menu,
+.sub-menu {
+    background: #fd7e14;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+  
+#menu-top-menu li {
+    color: #fff;
+    background: #fd7e14;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    z-index:5;
+}
+    
+#menu-top-menu li a {
+    color: #fff;
+}
+  
+#menu-top-menu li:hover,
+#menu-top-menu li:focus-within {
+    background: red;
+    cursor: pointer;
+}
+
+#menu-top-menu li:focus-within a {
+    outline: none;
+}
+
+ul.menu li ul.sub-menu {
+    background: #fd7e14;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+  
+ul.menu li:hover > ul.sub-menu,
+ul.menu li:focus-within > ul.sub-menu,
+ul.menu li ul.sub-menu:hover,
+ul.menu li ul.sub-menu:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+  
+ul.menu li ul.sub-menu li {
+    clear: both;
+    width: 100%;
+}
+.widget {
+    list-style: none;
+    margin-bottom : 5%;
+}
+
+.cat-item {
+    list-style: none;
+}
+
+#sidebar li > ul {
+    padding: 0;
+}
+
+#sidebar .children {
+    padding-left: 10%;
+}
+
+.igmdm-footer {
+    padding: 40px 0;
+    color: #999;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+  }
